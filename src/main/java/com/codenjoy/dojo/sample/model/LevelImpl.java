@@ -35,17 +35,28 @@ public class LevelImpl implements Level {
         return result;
     }
 
-//    @Override
-//    public List<Gold> getGold() {
-//        List<Gold> result = new LinkedList<Gold>();
-//
-//        for (Point pt : getPointsOf(Elements.GOLD)) {
-//            result.add(new Gold(pt));
-//        }                  n
-//
-//        return result;
-//        return null;
-//    }
+    public List<Hero> getOtherHero() {
+        List<Hero> result = new LinkedList<Hero>();
+
+        for (Point pt : getPointsOf(Elements.OTHER_HERO)) {
+            result.add(new Hero(pt));
+        }
+
+        return result;
+    }
+
+    @Override
+    public List<Ability> getAbility() {
+        List<Ability> result = new LinkedList<Ability>();
+
+        for (Point pt : getPointsOf(Elements.SUPER_ATTACK)) {
+            result.add(new Ability(pt, Ability.Type.WEAPON));
+        }
+        for (Point pt : getPointsOf(Elements.SUPER_DEFENCE)) {
+             result.add(new  Ability(pt, Ability.Type.DEFENCE));
+        }
+        return result;
+    }
 
     @Override
     public List<Wall> getWalls() {

@@ -13,9 +13,13 @@ import java.util.List;
  * Борда реализует интерфейс {@see Tickable} чтобы быть уведомленной о каждом тике игры. Обрати внимание на {Sample#tick()}
  */
 public class Sample implements Tickable, Field {
+    public static final int IS_DEAD = 1;
+    public static final int IS_ALIVE = 0;
+    public static final int ABILITY_TIME_EXIST = 10;
+    public static int counterOfAbility;
 
     private List<Wall> walls;
-//    private List<Gold> gold;
+    private List<Ability> abilities;
     private List<Bullet> bullets;
 
     private List<Player> players;
@@ -24,10 +28,11 @@ public class Sample implements Tickable, Field {
     private Dice dice;
 
     public Sample(Level level, Dice dice) {
+        counterOfAbility = ABILITY_TIME_EXIST;
         this.dice = dice;
         walls = level.getWalls();
-//        gold = level.getGold();
         size = level.getSize();
+        abilities = new LinkedList<Ability>();
         players = new LinkedList<Player>();
         bullets = new LinkedList<Bullet>();
     }
@@ -39,7 +44,6 @@ public class Sample implements Tickable, Field {
     public void tick() {
         for (Player player : players) {
             Hero hero = player.getHero();
-
             hero.tick();
 
 //            if (gold.contains(hero)) {
@@ -47,20 +51,50 @@ public class Sample implements Tickable, Field {
 //                player.event(Events.WIN);
 //
 //                Point pos = getFreeRandom();
-//                gold.add(new Gold(pos.getX(), pos.getY()));
+//                gold.add(new Ability(pos.getX(), pos.getY()));
 //            }
         }
+
+        checkBulletDirection();
 
         for (Player player : players) {
             Hero hero = player.getHero();
 
-            if (!hero.isAlive()) {
+            if (!hero.isAlive() && hero.getDeathTimeCounter() == IS_ALIVE) {
                 player.event(Events.LOOSE);
+                hero.setDeathTimeCounter(IS_DEAD);
+            } else if (!hero.isAlive() && hero.getDeathTimeCounter() == IS_DEAD){
+                hero.setDeathTimeCounter(IS_ALIVE);
+                hero.setAlive(true);
+                player.newHero(this);
+            } else {
+                //do nothing
             }
         }
-        
-        for (Bullet elemBullet : bullets){
-            elemBullet.tick();
+//        for (Bullet elemBullet : bullets){
+//            elemBullet.tick();
+//        }
+        if (abilities.isEmpty()){
+            Point pos = getFreeRandom();
+            abilities.add(new Ability(pos.getX(), pos.getY(), dice));
+        }
+    }
+
+    private void checkBulletDirection() {
+        for (Bullet elemBullet : bullets.toArray(new Bullet[bullets.size()])){
+
+            if (isBulletHitHero(elemBullet.getDirection().changeX(elemBullet.getX()), elemBullet.getDirection().changeY(elemBullet.getY()))){
+                int heroIndex = getHeroes().indexOf(PointImpl.pt(elemBullet.getDirection().changeX(elemBullet.getX()),
+                        elemBullet.getDirection().changeY(elemBullet.getY())));
+                Hero tmpHero = getHeroes().get(heroIndex);
+                tmpHero.setAlive(false);
+                bullets.remove(elemBullet);
+            } else if (!elemBullet.getField().isBarrier(elemBullet.getDirection().changeX(elemBullet.getX()),
+                    elemBullet.getDirection().changeY(elemBullet.getY()))){
+                elemBullet.tick();
+            } else {
+                bullets.remove(elemBullet);
+            }
         }
     }
 
@@ -102,8 +136,8 @@ public class Sample implements Tickable, Field {
     }
 
     @Override
-    public boolean isBomb(int x, int y) {
-        return bullets.contains(PointImpl.pt(x, y));
+    public boolean isBulletHitHero(int x, int y) {
+        return getHeroes().contains(PointImpl.pt(x, y));
     }
 
 //    @Override
@@ -123,12 +157,13 @@ public class Sample implements Tickable, Field {
     public void fireBullet(int x, int y, Direction direction, Field field) {
         if (direction == null) return;
 
-        int newX = direction.changeX(x);
-        int newY = direction.changeY(y);
-        bullets.add(new Bullet(newX, newY, direction, field));
+//        int newX = direction.changeX(x);
+//        int newY = direction.changeY(y);
+//        bullets.add(new Bullet(newX, newY, direction, field));
+        bullets.add(new Bullet(x, y, direction, field));
     }
 
-//    public List<Gold> getGold() {
+//    public List<Ability> getGold() {
 //        return gold;
 //    }
 
@@ -173,11 +208,19 @@ public class Sample implements Tickable, Field {
                 List<Point> result = new LinkedList<Point>();
                 result.addAll(Sample.this.getWalls());
                 result.addAll(Sample.this.getHeroes());
-//                result.addAll(Sample.this.getGold());
+                result.addAll(Sample.this.getAbilities());
                 result.addAll(Sample.this.getBullets());
                 return result;
             }
         };
     }
 
+    public List<Ability> getAbilities() {
+        return abilities;
+    }
+
+    @Override
+    public boolean catchAbility(int x, int y) {
+        return getAbilities().contains(PointImpl.pt(x, y));
+    }
 }

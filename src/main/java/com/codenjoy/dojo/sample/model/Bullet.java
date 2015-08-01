@@ -38,11 +38,6 @@ public class Bullet extends PointImpl implements Tickable, State<Elements, Playe
             int newX = direction.changeX(x);
             int newY = direction.changeY(y);
 
-//            if (field.isBomb(newX, newY)) {
-//                alive = false;
-//                field.removeBomb(newX, newY);
-//            }
-
             if (!field.isBarrier(newX, newY)) {
                 move(newX, newY);
                 x = newX;

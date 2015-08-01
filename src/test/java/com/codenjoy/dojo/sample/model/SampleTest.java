@@ -28,6 +28,9 @@ public class SampleTest {
     private Dice dice;
     private EventListener listener;
     private Player player;
+    private Player otherPlayer;
+    private Hero otherHero;
+    private Ability ability;
     private PrinterFactory printer = new PrinterFactoryImpl();
 
     @Before
@@ -42,9 +45,11 @@ public class SampleTest {
         }
     }
 
+
     private void givenFl(String board) {
         LevelImpl level = new LevelImpl(board);
         Hero hero = level.getHero().get(0);
+
 
         game = new Sample(level, dice);
         listener = mock(EventListener.class);
@@ -53,6 +58,18 @@ public class SampleTest {
         player.hero = hero;
         hero.init(game);
         this.hero = game.getHeroes().get(0);
+
+
+        if (level.getOtherHero().size() != 0){
+            Hero otherHero = level.getOtherHero().get(0);
+            otherPlayer = new Player(listener);
+            game.newGame(otherPlayer);
+            otherPlayer.hero = otherHero;
+            otherHero.init(game);
+            this.otherHero = game.getHeroes().get(1);
+        }
+
+
     }
 
     private void assertE(String expected) {
@@ -280,6 +297,7 @@ public class SampleTest {
         hero.act();
         game.tick();
         game.tick();
+        game.tick();
 
         assertE("☼☼☼☼☼☼" +
                 "☼    ☼" +
@@ -287,6 +305,165 @@ public class SampleTest {
                 "☼ ☺  ☼" +
                 "☼    ☼" +
                 "☼☼☼☼☼☼");
+    }
+
+    @Test
+    public void shouldBulletHitOtherHero() {
+        givenFl("☼☼☼☼☼☼" +
+                "☼ ☻  ☼" +
+                "☼    ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼☼☼☼☼☼");
+
+        hero.up();
+        game.tick();
+        assertE("☼☼☼☼☼☼" +
+                "☼ ☻  ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
+
+
+        hero.act();
+        game.tick();
+
+        assertE("☼☼☼☼☼☼" +
+                "☼ ☻  ☼" +
+                "☼ *  ☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
+        game.tick();
+
+        assertE("☼☼☼☼☼☼" +
+                "☼ X  ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
+    }
+
+    @Test
+    public void shouldOtherHeroRunawayFromBullet() {
+        givenFl("☼☼☼☼☼☼" +
+                "☼ ☻  ☼" +
+                "☼    ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼☼☼☼☼☼");
+
+        hero.up();
+        game.tick();
+        assertE("☼☼☼☼☼☼" +
+                "☼ ☻  ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
+
+
+        hero.act();
+        game.tick();
+
+        assertE("☼☼☼☼☼☼" +
+                "☼ ☻  ☼" +
+                "☼ *  ☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
+        otherHero.right();
+        game.tick();
+
+        assertE("☼☼☼☼☼☼" +
+                "☼ *☻ ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
+
+        game.tick();
+
+        assertE("☼☼☼☼☼☼" +
+                "☼  ☻ ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
+    }
+
+    @Test
+    public void shouldRessurectAfterDeath() {
+        givenFl("☼☼☼☼☼☼" +
+                "☼ ☻  ☼" +
+                "☼    ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼☼☼☼☼☼");
+
+        hero.up();
+        game.tick();
+        assertE("☼☼☼☼☼☼" +
+                "☼ ☻  ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
+
+
+        hero.act();
+        game.tick();
+
+        assertE("☼☼☼☼☼☼" +
+                "☼ ☻  ☼" +
+                "☼ *  ☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
+
+        game.tick();
+
+        assertE("☼☼☼☼☼☼" +
+                "☼ X  ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
+
+        game.tick();
+        otherHero.move(4, 3);
+        otherPlayer.hero = otherHero;
+
+        assertE("☼☼☼☼☼☼" +
+                "☼    ☼" +
+                "☼   ☻☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
+    }
+
+    //проверка появления ability
+    @Test
+    public void shouldShowAbility() {
+        givenFl("☼☼☼☼☼" +
+                "☼   ☼" +
+                "☼ ☺ ☼" +
+                "☼   ☼" +
+                "☼☼☼☼☼");
+
+        game.tick();
+        if (!game.getAbilities().isEmpty()) {
+            this.ability = game.getAbilities().get(0);
+            ability.move(3, 3);
+        }
+        game.tick();
+
+        assertE("☼☼☼☼☼" +
+                "☼  ~☼" +
+                "☼ ☺ ☼" +
+                "☼   ☼" +
+                "☼☼☼☼☼");
     }
 
     // на бомбе я взрываюсь

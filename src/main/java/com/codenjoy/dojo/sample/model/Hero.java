@@ -12,11 +12,20 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
     private boolean alive;
     private Direction direction;
     private Direction previousDirection;
+    private int deathTimeCounter;
+    private Ability ability;
 
     public Hero(Point xy) {
         super(xy);
         direction = null;
         alive = true;
+        this.deathTimeCounter = 0;
+    }
+
+
+
+    public void setAlive(boolean pAlive) {
+        alive = pAlive;
     }
 
     public void init(Field field) {
@@ -102,5 +111,21 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
         } else {
             return Elements.OTHER_HERO;
         }
+    }
+
+    public int getDeathTimeCounter() {
+        return deathTimeCounter;
+    }
+
+    public void setDeathTimeCounter(int pDeathTimeCounter) {
+        deathTimeCounter = pDeathTimeCounter;
+    }
+
+    public Ability getAbility() {
+        return ability;
+    }
+
+    public void setAbility(Ability pAbility) {
+        ability = pAbility;
     }
 }

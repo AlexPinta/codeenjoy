@@ -452,18 +452,26 @@ public class SampleTest {
                 "☼   ☼" +
                 "☼☼☼☼☼");
 
-        game.tick();
-        if (!game.getAbilities().isEmpty()) {
-            this.ability = game.getAbilities().get(0);
-            ability.move(3, 3);
-        }
-        game.tick();
+//        game.tick();
+//        if (!game.getAbilities().isEmpty()) {
+//            this.ability = game.getAbilities().get(0);
+//
+//        }
+        makeTicks(Sample.ABILITY_TIME_EXIST);
+        ability = game.getAbilities().get(0);
+        ability.move(3, 3);
 
         assertE("☼☼☼☼☼" +
                 "☼  ~☼" +
                 "☼ ☺ ☼" +
                 "☼   ☼" +
                 "☼☼☼☼☼");
+    }
+
+    private void makeTicks(int count){
+        for (int i = count; i != 0; i--) {
+            game.tick();
+        }
     }
 
     // на бомбе я взрываюсь

@@ -8,6 +8,7 @@ import com.codenjoy.dojo.services.*;
  */
 public class Hero extends PointImpl implements Joystick, Tickable, State<Elements, Player> {
 
+    public static final int ABILITY_LIFE_TIME = 10;
     private Field field;
     private boolean alive;
     private Direction direction;
@@ -15,11 +16,14 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
     private int deathTimeCounter;
     private Ability ability;
 
+    private int abilityCounter;
+
     public Hero(Point xy) {
         super(xy);
         direction = null;
         alive = true;
         this.deathTimeCounter = 0;
+        this.abilityCounter = 0;
     }
 
 
@@ -94,6 +98,9 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
         }
         previousDirection = direction;
         direction = null;
+        if (abilityCounter != 0 && --abilityCounter == 0){
+            ability = null;
+        }
     }
 
     public boolean isAlive() {
@@ -127,5 +134,11 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
 
     public void setAbility(Ability pAbility) {
         ability = pAbility;
+        abilityCounter = ABILITY_LIFE_TIME;
     }
+
+    public int getAbilityCounter() {
+        return abilityCounter;
+    }
+
 }

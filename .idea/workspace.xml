@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\Java Projects\codeenjoy\src\main\java\com\codenjoy\dojo\sample\model\Gold.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Bullet.java" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Bullet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Elements.java" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Elements.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Field.java" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Field.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Level.java" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Level.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/LevelImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/LevelImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Hero.java" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Hero.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Sample.java" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Sample.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/codenjoy/dojo/sample/model/SampleTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/codenjoy/dojo/sample/model/SampleTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
-    <list id="40537c0c-4c39-4cd5-9602-52df793428bc" name="Rejected commit: Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Hero.java" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Hero.java" />
-    </list>
+    <list id="40537c0c-4c39-4cd5-9602-52df793428bc" name="Rejected commit: Default" comment="" />
     <ignored path="codeenjoy.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
@@ -27,16 +18,16 @@
     <file path="/LevelImpl.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438462916465" ignored="false" />
     <file path="/Gold.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438433669567" ignored="false" />
     <file path="/fragment.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438464683846" ignored="false" />
-    <file path="/Sample.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438465921411" ignored="false" />
+    <file path="/Sample.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438467781314" ignored="false" />
     <file path="/GameRunner.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438436507130" ignored="false" />
     <file path="/YourSolver.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438437830753" ignored="false" />
-    <file path="/Hero.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438465730620" ignored="false" />
+    <file path="/Hero.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438468244948" ignored="false" />
     <file path="/Field.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438465860393" ignored="false" />
     <file path="/Bullet.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438448172604" ignored="false" />
-    <file path="/SampleTest.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438465425162" ignored="false" />
+    <file path="/SampleTest.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438468910953" ignored="false" />
     <file path="/Ability.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438463425649" ignored="false" />
     <file path="/Level.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438462685370" ignored="false" />
-    <file path="/Dummy.txt" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438466766497" ignored="false" />
+    <file path="/Dummy.txt" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438466811522" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,10 +103,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SampleTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SampleTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/codenjoy/dojo/sample/model/SampleTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="460" column="45" selection-start="10221" selection-end="10221" vertical-scroll-proportion="0.0">
+            <state line="460" column="0" selection-start="10225" selection-end="10225" vertical-scroll-proportion="0.26213592">
               <folding />
             </state>
           </provider>
@@ -124,7 +115,7 @@
       <file leaf-file-name="Hero.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Hero.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="33" selection-start="2725" selection-end="2725" vertical-scroll-proportion="0.0">
+            <state line="102" column="14" selection-start="2342" selection-end="2342" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -169,16 +160,16 @@
       <file leaf-file-name="Sample.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Sample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="36" selection-start="3724" selection-end="3724" vertical-scroll-proportion="0.0">
+            <state line="17" column="17" selection-start="657" selection-end="663" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LevelImpl.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="LevelImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/LevelImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="51" selection-start="1257" selection-end="1261" vertical-scroll-proportion="0.8252427">
+            <state line="52" column="51" selection-start="1257" selection-end="1261" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#885#891#0" expanded="true" />
                 <element signature="e#1134#1143#0" expanded="true" />
@@ -233,12 +224,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Bullet.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Elements.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Level.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/codenjoy/dojo/sample/model/SampleTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Hero.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Field.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Sample.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/LevelImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Ability.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Hero.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Sample.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/codenjoy/dojo/sample/model/SampleTest.java" />
       </list>
     </option>
   </component>
@@ -839,7 +830,15 @@
       <created>1438466770198</created>
       <updated>1438466770198</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="brilliants">
+      <created>1438466786225</created>
+      <updated>1438466786225</updated>
+    </task>
+    <task id="LOCAL-00003" summary="brilliants">
+      <created>1438466814653</created>
+      <updated>1438466814653</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1008,37 +1007,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/codenjoy/dojo/sample/model/SingleTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="581" selection-end="581" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/codenjoy/dojo/sample/model/SampleTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="460" column="45" selection-start="10221" selection-end="10221" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Hero.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="33" selection-start="2725" selection-end="2725" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Field.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="24" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Sample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="36" selection-start="3724" selection-end="3724" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1059,11 +1030,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/LevelImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="51" selection-start="1257" selection-end="1261" vertical-scroll-proportion="0.8252427">
+        <state line="52" column="51" selection-start="1257" selection-end="1261" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#885#891#0" expanded="true" />
             <element signature="e#1134#1143#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/codenjoy/dojo/sample/model/SingleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="13" selection-start="581" selection-end="581" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Hero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="14" selection-start="2342" selection-end="2342" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Sample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="17" selection-start="657" selection-end="663" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/codenjoy/dojo/sample/model/SampleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="460" column="0" selection-start="10225" selection-end="10225" vertical-scroll-proportion="0.26213592">
+          <folding />
         </state>
       </provider>
     </entry>

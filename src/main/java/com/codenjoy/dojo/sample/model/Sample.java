@@ -15,7 +15,7 @@ import java.util.List;
 public class Sample implements Tickable, Field {
     public static final int IS_DEAD = 1;
     public static final int IS_ALIVE = 0;
-    public static final int ABILITY_TIME_EXIST = 10;
+    public static final int ABILITY_TIME_EXIST = 5;
     public static int counterOfAbility;
 
     private List<Wall> walls;
@@ -46,17 +46,34 @@ public class Sample implements Tickable, Field {
             Hero hero = player.getHero();
             hero.tick();
 
-//            if (gold.contains(hero)) {
-//                gold.remove(hero);
+            if (abilities.contains(hero)) {
+                int indexAbility = abilities.indexOf(hero);
+                hero.setAbility(abilities.get(indexAbility));
+                abilities.remove(hero);
+                counterOfAbility = ABILITY_TIME_EXIST;
 //                player.event(Events.WIN);
-//
 //                Point pos = getFreeRandom();
 //                gold.add(new Ability(pos.getX(), pos.getY()));
-//            }
+            }
         }
 
         checkBulletDirection();
 
+        checkLifeCycleHero();
+
+//        for (Bullet elemBullet : bullets){
+//            elemBullet.tick();
+//        }
+        if (counterOfAbility != 0){
+            --counterOfAbility;
+        }
+        if (abilities.isEmpty() && counterOfAbility == 0){
+            Point pos = getFreeRandom();
+            abilities.add(new Ability(pos.getX(), pos.getY(), dice));
+        }
+    }
+
+    private void checkLifeCycleHero() {
         for (Player player : players) {
             Hero hero = player.getHero();
 
@@ -70,13 +87,6 @@ public class Sample implements Tickable, Field {
             } else {
                 //do nothing
             }
-        }
-//        for (Bullet elemBullet : bullets){
-//            elemBullet.tick();
-//        }
-        if (abilities.isEmpty()){
-            Point pos = getFreeRandom();
-            abilities.add(new Ability(pos.getX(), pos.getY(), dice));
         }
     }
 
@@ -129,8 +139,8 @@ public class Sample implements Tickable, Field {
     public boolean isFree(int x, int y) {
         Point pt = PointImpl.pt(x, y);
 
-//        return !gold.contains(pt) &&
-         return !bullets.contains(pt) &&
+        return  !abilities.contains(pt) &&
+                !bullets.contains(pt) &&
                 !walls.contains(pt) &&
                 !getHeroes().contains(pt);
     }

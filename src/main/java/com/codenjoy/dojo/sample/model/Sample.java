@@ -58,6 +58,10 @@ public class Sample implements Tickable, Field {
                 player.event(Events.LOOSE);
             }
         }
+        
+        for (Bullet elemBullet : bullets){
+            elemBullet.tick();
+        }
     }
 
     public int size() {
@@ -102,17 +106,26 @@ public class Sample implements Tickable, Field {
         return bullets.contains(PointImpl.pt(x, y));
     }
 
-    @Override
-    public void setBomb(int x, int y) {
-        Point pt = PointImpl.pt(x, y);
-        if (!bullets.contains(pt)) {
-            bullets.add(new Bullet(x, y));
-        }
-    }
+//    @Override
+//    public void setBomb(int x, int y) {
+//        Point pt = PointImpl.pt(x, y);
+//        if (!bullets.contains(pt)) {
+//            bullets.add(new Bullet(x, y));
+//        }
+//    }
+
+//    @Override
+//    public void removeBomb(int x, int y) {
+//        bullets.remove(PointImpl.pt(x, y));
+//    }
 
     @Override
-    public void removeBomb(int x, int y) {
-        bullets.remove(PointImpl.pt(x, y));
+    public void fireBullet(int x, int y, Direction direction, Field field) {
+        if (direction == null) return;
+
+        int newX = direction.changeX(x);
+        int newY = direction.changeY(y);
+        bullets.add(new Bullet(newX, newY, direction, field));
     }
 
 //    public List<Gold> getGold() {
@@ -166,4 +179,5 @@ public class Sample implements Tickable, Field {
             }
         };
     }
+
 }

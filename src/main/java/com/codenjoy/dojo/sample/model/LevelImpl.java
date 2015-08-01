@@ -67,4 +67,5 @@ public class LevelImpl implements Level {
         }
         return result;
     }
+
 }

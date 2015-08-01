@@ -1,5 +1,6 @@
 package com.codenjoy.dojo.sample.model;
 
+import com.codenjoy.dojo.services.Direction;
 import com.codenjoy.dojo.services.Point;
 
 /**
@@ -15,7 +16,9 @@ public interface Field {
 
     boolean isBomb(int x, int y);
 
-    void setBomb(int x, int y);
+//    void setBomb(int x, int y);
+//
+//    void removeBomb(int x, int y);
 
-    void removeBomb(int x, int y);
+    void fireBullet(int x, int y, Direction direction, Field field);
 }

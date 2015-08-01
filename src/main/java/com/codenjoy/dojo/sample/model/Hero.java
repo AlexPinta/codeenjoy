@@ -11,6 +11,7 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
     private Field field;
     private boolean alive;
     private Direction direction;
+    private Direction previousDirection;
 
     public Hero(Point xy) {
         super(xy);
@@ -50,11 +51,15 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
         direction = Direction.RIGHT;
     }
 
+    public Direction getPreviousDirection() {
+        return previousDirection;
+    }
+
     @Override
     public void act(int... p) {
         if (!alive) return;
 
-        field.setBomb(x, y);
+        field.fireBullet(x, y, previousDirection, field);
     }
 
     public Direction getDirection() {
@@ -69,15 +74,16 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
             int newX = direction.changeX(x);
             int newY = direction.changeY(y);
 
-            if (field.isBomb(newX, newY)) {
-                alive = false;
-                field.removeBomb(newX, newY);
-            }
+//            if (field.isBomb(newX, newY)) {
+//                alive = false;
+//                field.removeBomb(newX, newY);
+//            }
 
             if (!field.isBarrier(newX, newY)) {
                 move(newX, newY);
             }
         }
+        previousDirection = direction;
         direction = null;
     }
 

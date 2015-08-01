@@ -224,22 +224,69 @@ public class SampleTest {
 
     // я могу оставить бомбу
     @Test
-    public void shouldMakeBomb() {
-//        givenFl("☼☼☼☼☼" +
-//                "☼   ☼" +
-//                "☼ ☺ ☼" +
-//                "☼   ☼" +
-//                "☼☼☼☼☼");
-//
-//        hero.act();
-//        hero.down();
-//        game.tick();
-//
-//        assertE("☼☼☼☼☼" +
-//                "☼   ☼" +
-//                "☼ * ☼" +
-//                "☼ ☺ ☼" +
-//                "☼☼☼☼☼");
+    public void shouldMakeFire() {
+        givenFl("☼☼☼☼☼" +
+                "☼   ☼" +
+                "☼   ☼" +
+                "☼ ☺ ☼" +
+                "☼☼☼☼☼");
+
+        hero.up();
+        game.tick();
+        hero.act();
+        game.tick();
+
+        assertE("☼☼☼☼☼" +
+                "☼ * ☼" +
+                "☼ ☺ ☼" +
+                "☼   ☼" +
+                "☼☼☼☼☼");
+    }
+
+    @Test
+    public void shouldBulletMove() {
+        givenFl("☼☼☼☼☼☼" +
+                "☼    ☼" +
+                "☼    ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼☼☼☼☼☼");
+
+        hero.up();
+        game.tick();
+        hero.act();
+        game.tick();
+        game.tick();
+
+        assertE("☼☼☼☼☼☼" +
+                "☼ *  ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
+    }
+
+    @Test
+    public void shouldDestroyBulletOnWall() {
+        givenFl("☼☼☼☼☼☼" +
+                "☼    ☼" +
+                "☼    ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼☼☼☼☼☼");
+
+        hero.up();
+        game.tick();
+        hero.act();
+        game.tick();
+        game.tick();
+
+        assertE("☼☼☼☼☼☼" +
+                "☼    ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
     }
 
     // на бомбе я взрываюсь

@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/sprite/sample/bullet.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/sprite/sample/health_package.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/sprite/sample/robot.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/sprite/sample/super_attack.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/sprite/sample/super_defence.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/sprite/sample/super_other_hero.png" />
-      <change type="DELETED" beforePath="D:\Java Projects\codeenjoy\src\main\webapp\resources\sprite\sample\bomb.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Java Projects\codeenjoy\src\main\webapp\resources\sprite\sample\gold.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/sprite/sample/dead_hero.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/sprite/sample/dead_hero.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/sprite/sample/hero.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/sprite/sample/hero.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/sprite/sample/none.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/sprite/sample/none.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/sprite/sample/other_hero.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/sprite/sample/other_hero.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/sprite/sample/wall.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/sprite/sample/wall.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Robot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Sample.java" afterPath="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Sample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\Java Projects\codeenjoy\codeenjoy.iml" afterPath="$PROJECT_DIR$/Quake2D.iml" />
     </list>
     <list id="40537c0c-4c39-4cd5-9602-52df793428bc" name="Rejected commit: Default" comment="" />
     <ignored path="codeenjoy.iws" />
@@ -27,17 +18,17 @@
     <file path="/Board.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438433470265" ignored="false" />
     <file path="/LevelImpl.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438511748105" ignored="false" />
     <file path="/Gold.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438433669567" ignored="false" />
-    <file path="/fragment.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438517066518" ignored="false" />
-    <file path="/Sample.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438518427525" ignored="false" />
+    <file path="/fragment.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438521654258" ignored="false" />
+    <file path="/Sample.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438520719321" ignored="false" />
     <file path="/GameRunner.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438496837047" ignored="false" />
     <file path="/YourSolver.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438437830753" ignored="false" />
     <file path="/Hero.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438519143003" ignored="false" />
     <file path="/Field.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438515285441" ignored="false" />
-    <file path="/Bullet.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438518467242" ignored="false" />
+    <file path="/Bullet.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438520628325" ignored="false" />
     <file path="/SampleTest.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438503365904" ignored="false" />
     <file path="/Ability.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438476380826" ignored="false" />
     <file path="/Level.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438462685370" ignored="false" />
-    <file path="/Dummy.txt" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438520055786" ignored="false" />
+    <file path="/Dummy.txt" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438520190853" ignored="false" />
     <file path="/Events.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438503544492" ignored="false" />
     <file path="/BotSolver.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438513549596" ignored="false" />
     <file path="/Scores.java" changelist="9c5e49be-bfb5-4e2b-b92f-a1a1a756c280" time="1438504829675" ignored="false" />
@@ -62,35 +53,7 @@
   <component name="DebuggerManager">
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/client/ai/BotSolver.java" line="74" class="com.codenjoy.dojo.sample.client.ai.BotSolver" package="com.codenjoy.dojo.sample.client.ai">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Hero.java" line="101" class="com.codenjoy.dojo.sample.model.Hero" package="com.codenjoy.dojo.sample.model">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Hero.java" line="83" class="com.codenjoy.dojo.sample.model.Hero" package="com.codenjoy.dojo.sample.model">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Bullet.java" line="45" class="com.codenjoy.dojo.sample.model.Bullet" package="com.codenjoy.dojo.sample.model">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -152,7 +115,7 @@
       <file leaf-file-name="Hero.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Hero.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="24" selection-start="769" selection-end="769" vertical-scroll-proportion="-10.64">
+            <state line="83" column="0" selection-start="1987" selection-end="1987" vertical-scroll-proportion="-5.16">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -175,13 +138,65 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BotSolver.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BotSolver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/client/ai/BotSolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="65" selection-start="1582" selection-end="1582" vertical-scroll-proportion="1.0291262">
+            <state line="74" column="0" selection-start="2352" selection-end="2352" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5627#5646#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Bullet.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Bullet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="30" selection-start="1346" selection-end="1346" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SingleTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/codenjoy/dojo/sample/model/SingleTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="109" column="16" selection-start="2866" selection-end="2866" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScoresTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/codenjoy/dojo/sample/services/ScoresTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="16" selection-start="1015" selection-end="1015" vertical-scroll-proportion="0.5210356">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LevelImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/LevelImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="13" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#909#916#0" expanded="true" />
+                <element signature="e#1162#1168#0" expanded="true" />
+                <element signature="e#1411#1420#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sample.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Sample.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="122" column="9" selection-start="4280" selection-end="4280" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#7153#7160#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -217,10 +232,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Robot.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Field.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/client/ai/BotSolver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Sample.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Bullet.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Hero.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/services/GameRunner.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Sample.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Bullet.java" />
       </list>
     </option>
   </component>
@@ -306,70 +321,6 @@
               <option name="myItemId" value="sample" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="codeenjoy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="codeenjoy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="codeenjoy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="codeenjoy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -386,104 +337,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="codeenjoy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="codeenjoy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="codeenjoy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="codeenjoy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="help" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="codeenjoy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="codeenjoy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sprites" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -680,34 +533,6 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="SampleTest.shouldWorkHealthAbility" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.codenjoy.dojo.sample.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="codeenjoy" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.codenjoy.dojo.sample.model" />
-      <option name="MAIN_CLASS_NAME" value="com.codenjoy.dojo.sample.model.SampleTest" />
-      <option name="METHOD_NAME" value="shouldWorkHealthAbility" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="false" name="BotSolver" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -789,6 +614,29 @@
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="All in Quake2D" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Quake2D" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -885,18 +733,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.SampleTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.SampleTest.shouldWorkHealthAbility" />
-      <item index="2" class="java.lang.String" itemvalue="Application.BotSolver" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SampleTest.shouldOtherHeroBecomeSuperHero" />
-      <item index="4" class="java.lang.String" itemvalue="Application.YourSolver" />
+      <item index="1" class="java.lang.String" itemvalue="Application.BotSolver" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SampleTest.shouldOtherHeroBecomeSuperHero" />
+      <item index="3" class="java.lang.String" itemvalue="Application.YourSolver" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.All in Quake2D" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.BotSolver" />
-        <item index="1" class="java.lang.String" itemvalue="Application.YourSolver" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SampleTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SampleTest.shouldOtherHeroBecomeSuperHero" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.SampleTest.shouldWorkHealthAbility" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.All in Quake2D" />
+        <item index="1" class="java.lang.String" itemvalue="Application.BotSolver" />
+        <item index="2" class="java.lang.String" itemvalue="Application.YourSolver" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SampleTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SampleTest.shouldOtherHeroBecomeSuperHero" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -961,7 +809,11 @@
       <created>1438520057921</created>
       <updated>1438520057921</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="sturt up is ready">
+      <created>1438520192393</created>
+      <updated>1438520192393</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1007,7 +859,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2496749" sideWeight="0.47517732" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.61843973" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.741844" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1085,55 +937,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/codenjoy/engine/1.0/engine-1.0-sources.jar!/com/codenjoy/dojo/client/LocalGameRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="725" selection-end="725" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Hero.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="24" selection-start="769" selection-end="769" vertical-scroll-proportion="-10.64">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/services/GameRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="58" selection-start="2772" selection-end="2772" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getPlayerScores#0;class#GameRunner#0" expanded="false" />
-            <element signature="method#name#0;class#GameRunner#0" expanded="false" />
-            <element signature="method#getPlots#0;class#GameRunner#0" expanded="false" />
-            <element signature="method#getSettings#0;class#GameRunner#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sprites/dead_hero.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sprites/bullet.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sprites/health_package.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sprites/hero.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/sprites/wall.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1176,13 +979,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Field.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="12" selection-start="310" selection-end="310" vertical-scroll-proportion="0.20618556">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/LevelImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="13" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#909#916#0" expanded="true" />
+            <element signature="e#1162#1168#0" expanded="true" />
+            <element signature="e#1411#1420#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/client/ai/BotSolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="65" selection-start="1582" selection-end="1582" vertical-scroll-proportion="1.0291262">
+        <state line="74" column="0" selection-start="2352" selection-end="2352" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5627#5646#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Hero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="0" selection-start="1987" selection-end="1987" vertical-scroll-proportion="-5.16">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Sample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="9" selection-start="4280" selection-end="4280" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7153#7160#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codenjoy/dojo/sample/model/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="30" selection-start="1346" selection-end="1346" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/codenjoy/dojo/sample/model/SingleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="16" selection-start="2866" selection-end="2866" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/codenjoy/dojo/sample/services/ScoresTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="16" selection-start="1015" selection-end="1015" vertical-scroll-proportion="0.5210356">
+          <folding />
         </state>
       </provider>
     </entry>

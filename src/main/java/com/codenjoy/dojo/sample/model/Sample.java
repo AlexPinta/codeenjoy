@@ -104,9 +104,9 @@ public class Sample implements Tickable, Field {
     private void checkBulletDirection() {
         for (Bullet elemBullet : bullets.toArray(new Bullet[bullets.size()])){
 
-            if (isBulletHitHero(elemBullet.getDirection().changeX(elemBullet.getX()), elemBullet.getDirection().changeY(elemBullet.getY()))){
+            if (isBulletHitHero(elemBullet.getDirection().changeX(elemBullet.getX()), elemBullet.getDirection().inverted().changeY(elemBullet.getY()))){
                 int heroIndex = getHeroes().indexOf(PointImpl.pt(elemBullet.getDirection().changeX(elemBullet.getX()),
-                        elemBullet.getDirection().changeY(elemBullet.getY())));
+                        elemBullet.getDirection().inverted().changeY(elemBullet.getY())));
                 Hero tmpHero = getHeroes().get(heroIndex);
                 tmpHero.setDamage(elemBullet.getDamage());
 
@@ -115,7 +115,7 @@ public class Sample implements Tickable, Field {
                 }
                 bullets.remove(elemBullet);
             } else if (!elemBullet.getField().isBarrier(elemBullet.getDirection().changeX(elemBullet.getX()),
-                    elemBullet.getDirection().changeY(elemBullet.getY()))){
+                    elemBullet.getDirection().inverted().changeY(elemBullet.getY()))){
                 elemBullet.tick();
             } else {
                 bullets.remove(elemBullet);

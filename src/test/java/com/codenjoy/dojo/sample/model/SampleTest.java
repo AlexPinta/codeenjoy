@@ -498,7 +498,58 @@ public class SampleTest {
         }
     }
 
+    @Test
+    public void shouldIncreaseDamageAfterAbility() {
+        givenFl("☼☼☼☼☼☼" +
+                "☼ ☻  ☼" +
+                "☼    ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼☼☼☼☼☼");
+        makeTicks(Sample.ABILITY_TIME_EXIST);
+        game.getAbilities().get(0).move(2, 2);
+        hero.up();
+        game.tick();
+        assertE("☼☼☼☼☼☼" +
+                "☼ ☻  ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
 
+
+        hero.act();
+        game.tick();
+
+        assertE("☼☼☼☼☼☼" +
+                "☼ ☻  ☼" +
+                "☼ *  ☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
+
+//        otherPlayer.hero.setHealth(Bullet.START_DAMAGE);
+        game.tick();
+
+        assertE("☼☼☼☼☼☼" +
+                "☼ ☻  ☼" +
+                "☼    ☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
+        Assert.assertEquals(otherPlayer.hero.getHealth(), Hero.START_HEALTH - Bullet.START_DAMAGE*Bullet.WEAPON_MULTIPLICATOR);
+//
+//        game.tick();
+//        otherHero.move(4, 3);
+//        otherPlayer.hero = otherHero;
+//
+//        assertE("☼☼☼☼☼☼" +
+//                "☼    ☼" +
+//                "☼   ☻☼" +
+//                "☼ ☺  ☼" +
+//                "☼    ☼" +
+//                "☼☼☼☼☼☼");
+    }
 
     // проверить, что если новому обекту не где появится то программа не зависает - там бесконечный цикл потенциальный есть
     @Test(timeout = 1000)

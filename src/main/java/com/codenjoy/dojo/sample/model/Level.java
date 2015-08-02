@@ -17,4 +17,6 @@ public interface Level {
     List<Hero> getHero();
 
     List<Ability> getAbility();
+
+    List<Robot> getRobots(Field field);
 }

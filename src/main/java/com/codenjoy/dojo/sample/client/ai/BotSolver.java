@@ -27,6 +27,7 @@ import java.util.Map;
 public class BotSolver implements Solver<Board> {
 
     private DeikstraFindWay way;
+    public static final int SHIFT_COMMAND = 100;
 
 //    private static Sample game = null;
 
@@ -70,7 +71,17 @@ public class BotSolver implements Solver<Board> {
         if (board.isGameOver()) return "";
         List<Direction> result = getDirections(board);
         if (result.isEmpty()) return "";
-        return result.get(0).toString();
+
+        return moveWithAction(result.get(0));
+    }
+
+    private String moveWithAction(Direction direction){
+        for (Direction elemDirection : Direction.values()){
+            if (direction == elemDirection){
+                return Direction.ACT(elemDirection.ordinal() + SHIFT_COMMAND);
+            }
+        }
+        return direction.toString();
     }
 
     public List<Direction> getDirections(Board board) {
@@ -98,7 +109,7 @@ public class BotSolver implements Solver<Board> {
             return way.getShortestWay(size, from, to_Abilities, map);
         } else {
             return inversionOfDirection(size, from, to_OtherHero, map);
-//            way.getPossibleWays()
+//          way.getPossibleWays()
         }
 
 //        DeikstraFindWay.Possible map = possible(board);

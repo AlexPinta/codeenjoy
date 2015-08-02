@@ -1,5 +1,6 @@
 package com.codenjoy.dojo.sample.model;
 
+import com.codenjoy.dojo.client.Direction;
 import com.codenjoy.dojo.sample.services.Events;
 import com.codenjoy.dojo.services.*;
 
@@ -26,6 +27,9 @@ public class Sample implements Tickable, Field {
 
     private final int size;
     private Dice dice;
+    private List<Robot> robots;
+    private List<Robot> robotsNew;
+
 
     public Sample(Level level, Dice dice) {
         counterOfAbility = ABILITY_TIME_EXIST;
@@ -35,6 +39,8 @@ public class Sample implements Tickable, Field {
         abilities = new LinkedList<Ability>();
         players = new LinkedList<Player>();
         bullets = new LinkedList<Bullet>();
+        robotsNew = new LinkedList<Robot>();
+        robots = level.getRobots(this);
     }
 
     /**
@@ -42,10 +48,15 @@ public class Sample implements Tickable, Field {
      */
     @Override
     public void tick() {
+//        robots.addAll(robotsNew);
+//        robotsNew.clear();
 
         takeAbility();
         checkBulletDirection();
         checkLifeCycleHero();
+//        for (Robot robot : robots) {
+//            robot.tick();
+//        }
 
         if (counterOfAbility != 0){
             counterOfAbility--;
@@ -172,9 +183,14 @@ public class Sample implements Tickable, Field {
         if (direction == null) return;
 
 //        int newX = direction.changeX(x);
-//        int newY = direction.changeY(y);
-//        bullets.add(new Bullet(newX, newY, direction, field));
+//        int newY = direction.inverted().changeY(y);
+//        bullets.add(new Bullet(newX, newY, direction, field, hero));
         bullets.add(new Bullet(x, y, direction, field, hero));
+    }
+
+    @Override
+    public void newRobot(int x, int y) {
+        robotsNew.add(new Robot(this, x, y));
     }
 
 //    public List<Ability> getGold() {
@@ -222,6 +238,7 @@ public class Sample implements Tickable, Field {
                 List<Point> result = new LinkedList<Point>();
                 result.addAll(Sample.this.getWalls());
                 result.addAll(Sample.this.getHeroes());
+//                result.addAll(Sample.this.robots);
                 result.addAll(Sample.this.getAbilities());
                 result.addAll(Sample.this.getBullets());
                 return result;

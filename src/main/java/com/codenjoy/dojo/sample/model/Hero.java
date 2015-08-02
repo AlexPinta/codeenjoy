@@ -1,5 +1,8 @@
 package com.codenjoy.dojo.sample.model;
 
+import com.codenjoy.dojo.client.*;
+import com.codenjoy.dojo.client.Direction;
+import com.codenjoy.dojo.sample.client.ai.BotSolver;
 import com.codenjoy.dojo.services.*;
 
 /**
@@ -11,6 +14,9 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
     public static final int ABILITY_LIFE_TIME = 10;
     public static final int START_HEALTH = 100;
     public static final int DEFFENCE_MULTIPLICATOR = 2;
+    public static final int FREAQEUNCY_SHUT = 7;
+
+
     private Field field;
     private boolean alive;
     private Direction direction;
@@ -18,6 +24,7 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
     private int deathTimeCounter;
     private Ability ability;
     private int health;
+    private int counterBeetwenShut = 0;
 
 
     private int abilityCounter;
@@ -74,8 +81,14 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
     @Override
     public void act(int... p) {
         if (!alive) return;
-
-        field.fireBullet(x, y, previousDirection, field, this);
+        if (p.length != 0 && p[0] >= BotSolver.SHIFT_COMMAND){
+            direction = Direction.values()[p[0] - BotSolver.SHIFT_COMMAND];
+            tick();
+        }
+        if (counterBeetwenShut == 0){
+            field.fireBullet(x, y, previousDirection, field, this);
+            counterBeetwenShut = FREAQEUNCY_SHUT;
+        }
     }
 
     public Direction getDirection() {
@@ -88,7 +101,7 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
 
         if (direction != null) {
             int newX = direction.changeX(x);
-            int newY = direction.changeY(y);
+            int newY = direction.inverted().changeY(y);
 
 //            if (field.isBomb(newX, newY)) {
 //                alive = false;
@@ -101,6 +114,7 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
         }
         previousDirection = direction;
         direction = null;
+        counterBeetwenShut = Math.max(0,--counterBeetwenShut);
         if (abilityCounter != 0 && --abilityCounter == 0){
             ability = null;
         }

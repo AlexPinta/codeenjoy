@@ -1,6 +1,10 @@
 package com.codenjoy.dojo.sample.model;
 
-import com.codenjoy.dojo.services.*;
+
+import com.codenjoy.dojo.client.Direction;
+import com.codenjoy.dojo.services.PointImpl;
+import com.codenjoy.dojo.services.State;
+import com.codenjoy.dojo.services.Tickable;
 
 /**
  * Артефакт Бомба на поле
@@ -41,7 +45,7 @@ public class Bullet extends PointImpl implements Tickable, State<Elements, Playe
     public void tick() {
         if (direction != null) {
             int newX = direction.changeX(x);
-            int newY = direction.changeY(y);
+            int newY = direction.inverted().changeY(y);
 
             if (!field.isBarrier(newX, newY)) {
                 move(newX, newY);

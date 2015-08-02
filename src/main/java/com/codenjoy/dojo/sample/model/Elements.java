@@ -17,7 +17,8 @@ public enum Elements implements CharElements {
     DEAD_HERO('X'), // а это временное явление - трупик моего героя, которое пропадет в следующем такте
     SUPER_DEFENCE('#'), // доп защита
     HEALTH_PACKAGE('+'), // доп защита
-    SUPER_ATTACK('~'); // доп атака
+    SUPER_ATTACK('~'), // доп атака
+    ROBOT('!');         // робот
 //    GOLD('$'),       // это то, за чем будет охота
 //    BOMB('x');       // а это бомба, на которой можно подорваться
 

@@ -35,6 +35,17 @@ public class LevelImpl implements Level {
         return result;
     }
 
+    @Override
+    public List<Robot> getRobots(Field field) {
+        List<Robot> result = new LinkedList<Robot>();
+
+        for (Point pt : getPointsOf(Elements.ROBOT)) {
+            result.add(new Robot(field, pt.getX(), pt.getY()));
+        }
+
+        return result;
+    }
+
     public List<Hero> getOtherHero() {
         List<Hero> result = new LinkedList<Hero>();
 

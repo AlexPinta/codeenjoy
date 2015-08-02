@@ -1,6 +1,6 @@
 package com.codenjoy.dojo.sample.model;
 
-import com.codenjoy.dojo.services.Direction;
+import com.codenjoy.dojo.client.Direction;
 import com.codenjoy.dojo.services.Point;
 
 /**
@@ -25,4 +25,9 @@ public interface Field {
 
 
     void fireBullet(int x, int y, Direction direction, Field field, Hero hero);
+
+    void newRobot(int x, int y);
+
+
+//    void fireBullet(int x, int y, com.codenjoy.dojo.services.Direction direction, Field field, Hero hero);
 }

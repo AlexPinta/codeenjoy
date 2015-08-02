@@ -37,4 +37,8 @@ public class Ability extends PointImpl implements State<Elements, Player> {
             return Elements.SUPER_DEFENCE;
         }
     }
+
+    public Type getAbilityType() {
+        return abilityType;
+    }
 }

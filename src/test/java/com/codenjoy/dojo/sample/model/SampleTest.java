@@ -6,6 +6,7 @@ import com.codenjoy.dojo.sample.services.Events;
 import com.codenjoy.dojo.services.Dice;
 import com.codenjoy.dojo.services.EventListener;
 import com.codenjoy.dojo.services.PrinterFactoryImpl;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.stubbing.OngoingStubbing;
@@ -335,6 +336,7 @@ public class SampleTest {
                 "☼ ☺  ☼" +
                 "☼    ☼" +
                 "☼☼☼☼☼☼");
+        otherPlayer.hero.setHealth(Bullet.START_DAMAGE);
         game.tick();
 
         assertE("☼☼☼☼☼☼" +
@@ -422,6 +424,7 @@ public class SampleTest {
                 "☼    ☼" +
                 "☼☼☼☼☼☼");
 
+        otherPlayer.hero.setHealth(Bullet.START_DAMAGE);
         game.tick();
 
         assertE("☼☼☼☼☼☼" +
@@ -452,11 +455,7 @@ public class SampleTest {
                 "☼   ☼" +
                 "☼☼☼☼☼");
 
-//        game.tick();
-//        if (!game.getAbilities().isEmpty()) {
-//            this.ability = game.getAbilities().get(0);
-//
-//        }
+
         makeTicks(Sample.ABILITY_TIME_EXIST);
         ability = game.getAbilities().get(0);
         ability.move(3, 3);
@@ -468,90 +467,38 @@ public class SampleTest {
                 "☼☼☼☼☼");
     }
 
+    @Test
+    public void shouldHasHeroAbility() {
+        givenFl("☼☼☼☼☼" +
+                "☼   ☼" +
+                "☼ ☺ ☼" +
+                "☼   ☼" +
+                "☼☼☼☼☼");
+
+
+        makeTicks(Sample.ABILITY_TIME_EXIST);
+        ability = game.getAbilities().get(0);
+        ability.move(3, 3);
+        player.hero.up();
+        game.tick();
+        player.hero.right();
+        game.tick();
+
+        assertE("☼☼☼☼☼" +
+                "☼  ☺☼" +
+                "☼   ☼" +
+                "☼   ☼" +
+                "☼☼☼☼☼");
+        Assert.assertNotNull(player.hero.getAbility());
+    }
+
     private void makeTicks(int count){
         for (int i = count; i != 0; i--) {
             game.tick();
         }
     }
 
-    // на бомбе я взрываюсь
-    @Test
-    public void shouldDieOnBomb() {
-//        shouldMakeBomb();
-//
-//        assertTrue(hero.isAlive());
-//
-//        hero.up();
-//        game.tick();
-//        verify(listener).event(Events.LOOSE);
-//
-//        assertE("☼☼☼☼☼" +
-//                "☼   ☼" +
-//                "☼ X ☼" +
-//                "☼   ☼" +
-//                "☼☼☼☼☼");
-//
-//        assertFalse(hero.isAlive());
-    }
 
-    // я могу оставить бомб сколько хочу
-    @Test
-    public void shouldMakeBombTwice() {
-//        shouldMakeBomb();
-//
-//        hero.act();
-//        hero.right();
-//        game.tick();
-//
-//        assertE("☼☼☼☼☼" +
-//                "☼   ☼" +
-//                "☼   ☼" +
-//                "☼ x☺☼" +
-//                "☼☼☼☼☼");
-    }
-
-    // я могу собирать золото и получать очки
-    // новое золото появится в рендомном месте
-    @Test
-    public void shouldGetGold() {
-//        givenFl("☼☼☼☼☼" +
-//                "☼   ☼" +
-//                "☼ ☺$☼" +
-//                "☼   ☼" +
-//                "☼☼☼☼☼");
-//
-//        dice(1, 3);
-//        hero.right();
-//        game.tick();
-//        verify(listener).event(Events.WIN);
-//
-//        assertE("☼☼☼☼☼" +
-//                "☼$  ☼" +
-//                "☼  ☺☼" +
-//                "☼   ☼" +
-//                "☼☼☼☼☼");
-    }
-
-    // выполнения команд left + act не зависят от порядка - если они сделаны в одном тике, то будет дырка слева без перемещения
-    @Test
-    public void shouldMakeBomb2() {
-//        givenFl("☼☼☼☼☼" +
-//                "☼   ☼" +
-//                "☼ ☺ ☼" +
-//                "☼   ☼" +
-//                "☼☼☼☼☼");
-//
-//        hero.down();
-//        hero.act();
-////        hero.down();
-//        game.tick();
-//
-//        assertE("☼☼☼☼☼" +
-//                "☼   ☼" +
-//                "☼ x ☼" +
-//                "☼ ☺ ☼" +
-//                "☼☼☼☼☼");
-    }
 
     // проверить, что если новому обекту не где появится то программа не зависает - там бесконечный цикл потенциальный есть
     @Test(timeout = 1000)
@@ -575,44 +522,5 @@ public class SampleTest {
     }
 
     // я не могу ставить две бомбы на одной клетке
-    @Test
-    public void shouldMakeOnlyOneBomb() {
-//        givenFl("☼☼☼☼☼" +
-//                "☼   ☼" +
-//                "☼ ☺ ☼" +
-//                "☼   ☼" +
-//                "☼☼☼☼☼");
-//
-//        hero.act();
-//        game.tick();
-//
-//        hero.act();
-//        hero.down();
-//        game.tick();
-//
-//        assertE("☼☼☼☼☼" +
-//                "☼   ☼" +
-//                "☼ x ☼" +
-//                "☼ ☺ ☼" +
-//                "☼☼☼☼☼");
-//
-//        dice(1, 2);
-//        hero.up();
-//        game.tick();
-//
-//        assertE("☼☼☼☼☼" +
-//                "☼   ☼" +
-//                "☼ X ☼" +
-//                "☼   ☼" +
-//                "☼☼☼☼☼");
-//
-//        game.newGame(player);
-//        game.tick();
-//
-//        assertE("☼☼☼☼☼" +
-//                "☼   ☼" +
-//                "☼☺  ☼" +
-//                "☼   ☼" +
-//                "☼☼☼☼☼");
-    }
+
 }

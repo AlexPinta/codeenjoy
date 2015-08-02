@@ -6,17 +6,22 @@ import com.codenjoy.dojo.services.*;
  * Артефакт Бомба на поле
  */
 public class Bullet extends PointImpl implements Tickable, State<Elements, Player> {
+    public static final int START_DAMAGE = 10;
+    public static final int WEAPON_MULTIPLICATOR = 2;
     private Direction direction;
 
     private Field field;
+    private int damage;
 
     public Field getField() {
         return field;
     }
 
-    public Bullet(int x, int y, Direction direction, Field field) {
+    public Bullet(int x, int y, Direction direction, Field field, Hero hero) {
         super(x, y);
         this.direction = direction;
+        this.damage = ((hero.getAbility() != null && hero.getAbility().getAbilityType() == Ability.Type.WEAPON) ? START_DAMAGE*WEAPON_MULTIPLICATOR : START_DAMAGE);
+
         this.field = field;
     }
 
@@ -45,5 +50,9 @@ public class Bullet extends PointImpl implements Tickable, State<Elements, Playe
             }
         }
 //        direction = null;
+    }
+
+    public int getDamage() {
+        return damage;
     }
 }

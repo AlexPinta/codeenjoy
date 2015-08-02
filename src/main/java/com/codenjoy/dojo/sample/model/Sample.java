@@ -65,7 +65,7 @@ public class Sample implements Tickable, Field {
 //            elemBullet.tick();
 //        }
         if (counterOfAbility != 0){
-            --counterOfAbility;
+            counterOfAbility--;
         }
         if (abilities.isEmpty() && counterOfAbility == 0){
             Point pos = getFreeRandom();
@@ -97,7 +97,10 @@ public class Sample implements Tickable, Field {
                 int heroIndex = getHeroes().indexOf(PointImpl.pt(elemBullet.getDirection().changeX(elemBullet.getX()),
                         elemBullet.getDirection().changeY(elemBullet.getY())));
                 Hero tmpHero = getHeroes().get(heroIndex);
-                tmpHero.setAlive(false);
+                tmpHero.setDamage(elemBullet.getDamage());
+                if (tmpHero.getHealth() == 0) {
+                    tmpHero.setAlive(false);
+                }
                 bullets.remove(elemBullet);
             } else if (!elemBullet.getField().isBarrier(elemBullet.getDirection().changeX(elemBullet.getX()),
                     elemBullet.getDirection().changeY(elemBullet.getY()))){
@@ -164,13 +167,13 @@ public class Sample implements Tickable, Field {
 //    }
 
     @Override
-    public void fireBullet(int x, int y, Direction direction, Field field) {
+    public void fireBullet(int x, int y, Direction direction, Field field, Hero hero) {
         if (direction == null) return;
 
 //        int newX = direction.changeX(x);
 //        int newY = direction.changeY(y);
 //        bullets.add(new Bullet(newX, newY, direction, field));
-        bullets.add(new Bullet(x, y, direction, field));
+        bullets.add(new Bullet(x, y, direction, field, hero));
     }
 
 //    public List<Ability> getGold() {

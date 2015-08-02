@@ -24,5 +24,5 @@ public interface Field {
 
 
 
-    void fireBullet(int x, int y, Direction direction, Field field);
+    void fireBullet(int x, int y, Direction direction, Field field, Hero hero);
 }

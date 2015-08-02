@@ -9,12 +9,16 @@ import com.codenjoy.dojo.services.*;
 public class Hero extends PointImpl implements Joystick, Tickable, State<Elements, Player> {
 
     public static final int ABILITY_LIFE_TIME = 10;
+    public static final int START_HEALTH = 100;
+    public static final int DEFFENCE_MULTIPLICATOR = 2;
     private Field field;
     private boolean alive;
     private Direction direction;
     private Direction previousDirection;
     private int deathTimeCounter;
     private Ability ability;
+    private int health;
+
 
     private int abilityCounter;
 
@@ -24,9 +28,8 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
         alive = true;
         this.deathTimeCounter = 0;
         this.abilityCounter = 0;
+        this.health = START_HEALTH;
     }
-
-
 
     public void setAlive(boolean pAlive) {
         alive = pAlive;
@@ -72,7 +75,7 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
     public void act(int... p) {
         if (!alive) return;
 
-        field.fireBullet(x, y, previousDirection, field);
+        field.fireBullet(x, y, previousDirection, field, this);
     }
 
     public Direction getDirection() {
@@ -141,4 +144,18 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
         return abilityCounter;
     }
 
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int pHealth) {
+        health = pHealth;
+    }
+
+    public void setDamage(int pDamage) {
+
+        health -= ((ability != null && ability.getAbilityType() == Ability.Type.DEFENCE) ? pDamage/DEFFENCE_MULTIPLICATOR : pDamage);
+
+        Math.max(0, health);
+    }
 }

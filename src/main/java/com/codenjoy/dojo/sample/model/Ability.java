@@ -9,8 +9,8 @@ import com.codenjoy.dojo.services.State;
  * Артефакт Золото на поле
  */
 public class Ability extends PointImpl implements State<Elements, Player> {
-
-    enum Type {WEAPON, DEFENCE}
+    public static final int HEALTH_BONUS = 30;
+    enum Type {WEAPON, DEFENCE, HEALTH}
 
     private Type abilityType;
 
@@ -33,8 +33,10 @@ public class Ability extends PointImpl implements State<Elements, Player> {
     public Elements state(Player player, Object... alsoAtPoint) {
         if (abilityType == Type.WEAPON){
             return Elements.SUPER_ATTACK;
-        } else {
+        } else if (abilityType == Type.DEFENCE) {
             return Elements.SUPER_DEFENCE;
+        } else {
+            return Elements.HEALTH_PACKAGE;
         }
     }
 

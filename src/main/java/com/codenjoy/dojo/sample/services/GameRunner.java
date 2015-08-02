@@ -1,7 +1,7 @@
 package com.codenjoy.dojo.sample.services;
 
 import com.codenjoy.dojo.client.WebSocketRunner;
-import com.codenjoy.dojo.sample.client.ai.ApofigSolver;
+import com.codenjoy.dojo.sample.client.ai.BotSolver;
 import com.codenjoy.dojo.sample.model.*;
 import com.codenjoy.dojo.services.*;
 import com.codenjoy.dojo.services.settings.Parameter;
@@ -16,7 +16,8 @@ import static com.codenjoy.dojo.services.settings.SimpleParameter.v;
  */
 public class GameRunner implements GameType {
 
-    public final static boolean SINGLE = true;
+//    public final static boolean SINGLE = true;
+    public final static boolean SINGLE = false;
     private final Settings settings;
     private final Level level;
     private Sample game;
@@ -104,6 +105,6 @@ public class GameRunner implements GameType {
 
     @Override
     public void newAI(String aiName) {
-        ApofigSolver.start(aiName, WebSocketRunner.Host.REMOTE);
+        BotSolver.start(aiName, WebSocketRunner.Host.REMOTE);
     }
 }

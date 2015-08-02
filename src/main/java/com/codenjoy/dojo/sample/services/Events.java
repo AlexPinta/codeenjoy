@@ -5,5 +5,6 @@ package com.codenjoy.dojo.sample.services;
  * или, быть может, наоборот - он поднял что-то ценное и ты хочешь ему дать бонус. Вот все все ивенты.
  */
 public enum Events {
-    WIN, LOOSE;
+//    WIN, LOOSE;
+    INJURE, KILL;
 }

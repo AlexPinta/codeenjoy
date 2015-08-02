@@ -10,8 +10,8 @@ import com.codenjoy.dojo.services.settings.Settings;
  */
 public class Scores implements PlayerScores {
 
-    private final Parameter<Integer> winScore;
-    private final Parameter<Integer> loosePenalty;
+    private final Parameter<Integer> killScore;
+    private final Parameter<Integer> injureScore;
 
     private volatile int score;
 
@@ -19,8 +19,8 @@ public class Scores implements PlayerScores {
         this.score = startScore;
 
         // вот тут мы на админке увидим два поля с подписями и возожностью редактировать значение по умолчанию
-        winScore = settings.addEditBox("Win score").type(Integer.class).def(30);
-        loosePenalty = settings.addEditBox("Loose penalty").type(Integer.class).def(100);
+        killScore = settings.addEditBox("Kill score").type(Integer.class).def(30);
+        injureScore = settings.addEditBox("Injure score").type(Integer.class).def(10);
     }
 
     @Override
@@ -35,10 +35,10 @@ public class Scores implements PlayerScores {
 
     @Override
     public void event(Object event) {
-        if (event.equals(Events.WIN)) {
-            score += winScore.getValue();
-        } else if (event.equals(Events.LOOSE)) {
-            score -= loosePenalty.getValue();
+        if (event.equals(Events.KILL)) {
+            score += killScore.getValue();
+        } else if (event.equals(Events.INJURE)) {
+            score += injureScore.getValue();
         }
         score = Math.max(0, score);
     }

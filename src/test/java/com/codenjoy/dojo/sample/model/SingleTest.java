@@ -164,7 +164,7 @@ public class SingleTest {
                 "☼    ☼\n" +
                 "☼☼☼☼☼☼\n");
 
-        verify(listener3).event(Events.LOOSE);
+        verify(listener3).event(Events.INJURE);
         assertTrue(game3.isGameOver());
 
         dice(4, 1);
@@ -196,7 +196,7 @@ public class SingleTest {
                 "☼    ☼\n" +
                 "☼☼☼☼☼☼\n");
 
-        verify(listener3).event(Events.WIN);
+        verify(listener3).event(Events.KILL);
 
         assertEquals(1, game3.getCurrentScore());
         assertEquals(1, game3.getMaxScore());

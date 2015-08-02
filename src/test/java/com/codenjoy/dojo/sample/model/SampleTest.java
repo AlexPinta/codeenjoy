@@ -1,11 +1,8 @@
 package com.codenjoy.dojo.sample.model;
 
-import com.codenjoy.dojo.services.PrinterFactory;
+import com.codenjoy.dojo.services.*;
 import com.codenjoy.dojo.utils.TestUtils;
 import com.codenjoy.dojo.sample.services.Events;
-import com.codenjoy.dojo.services.Dice;
-import com.codenjoy.dojo.services.EventListener;
-import com.codenjoy.dojo.services.PrinterFactoryImpl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -58,6 +55,7 @@ public class SampleTest {
         game.newGame(player);
         player.hero = hero;
         hero.init(game);
+        player.hero.setHealth(Hero.START_HEALTH - player.hero.getHealth());
         this.hero = game.getHeroes().get(0);
 
 
@@ -67,6 +65,7 @@ public class SampleTest {
             game.newGame(otherPlayer);
             otherPlayer.hero = otherHero;
             otherHero.init(game);
+            otherPlayer.hero.setHealth(Hero.START_HEALTH - player.hero.getHealth());
             this.otherHero = game.getHeroes().get(1);
         }
 
@@ -336,7 +335,7 @@ public class SampleTest {
                 "☼ ☺  ☼" +
                 "☼    ☼" +
                 "☼☼☼☼☼☼");
-        otherPlayer.hero.setHealth(Bullet.START_DAMAGE);
+        otherPlayer.hero.setHealth(-(Hero.START_HEALTH-Bullet.START_DAMAGE));
         game.tick();
 
         assertE("☼☼☼☼☼☼" +
@@ -424,7 +423,7 @@ public class SampleTest {
                 "☼    ☼" +
                 "☼☼☼☼☼☼");
 
-        otherPlayer.hero.setHealth(Bullet.START_DAMAGE);
+        otherPlayer.hero.setHealth(-(Hero.START_HEALTH-Bullet.START_DAMAGE));
         game.tick();
 
         assertE("☼☼☼☼☼☼" +
@@ -551,6 +550,53 @@ public class SampleTest {
 //                "☼☼☼☼☼☼");
     }
 
+    @Test
+    public void shouldWorkHealthAbility() {
+        givenFl("☼☼☼☼☼" +
+                "☼   ☼" +
+                "☼ ☺ ☼" +
+                "☼   ☼" +
+                "☼☼☼☼☼");
+
+
+        makeTicks(Sample.ABILITY_TIME_EXIST);
+        ability = game.getAbilities().get(0);
+        game.getAbilities().add(0, new Ability(new PointImpl(3,3), Ability.Type.HEALTH));
+
+        ability.move(3, 3);
+        player.hero.up();
+        game.tick();
+        player.hero.setHealth(-(Bullet.START_DAMAGE + Ability.HEALTH_BONUS));
+        player.hero.right();
+        game.tick();
+
+        assertE("☼☼☼☼☼" +
+                "☼  ☺☼" +
+                "☼   ☼" +
+                "☼   ☼" +
+                "☼☼☼☼☼");
+        Assert.assertEquals(Hero.START_HEALTH - Bullet.START_DAMAGE + (Ability.HEALTH_BONUS - Ability.HEALTH_BONUS), player.hero.getHealth());
+    }
+
+    @Test
+    public void shouldOtherHeroBecomeSuperHero() {
+        givenFl("☼☼☼☼☼☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼    ☼" +
+                "☼ ☻  ☼" +
+                "☼☼☼☼☼☼");
+        makeTicks(Sample.ABILITY_TIME_EXIST);
+        game.getAbilities().get(0).move(2, 2);
+        otherPlayer.hero.up();
+        game.tick();
+        assertE("☼☼☼☼☼☼" +
+                "☼ ☺  ☼" +
+                "☼    ☼" +
+                "☼ Š  ☼" +
+                "☼    ☼" +
+                "☼☼☼☼☼☼");
+    }
     // проверить, что если новому обекту не где появится то программа не зависает - там бесконечный цикл потенциальный есть
     @Test(timeout = 1000)
     public void shouldNoDeadLoopWhenNewObjectCreation() {

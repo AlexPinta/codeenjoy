@@ -118,6 +118,8 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
 
         if (this == player.getHero()) {
             return Elements.HERO;
+        } else if (this.getAbility() != null){
+            return Elements.SUPER_OTHER_HERO;
         } else {
             return Elements.OTHER_HERO;
         }
@@ -136,8 +138,12 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
     }
 
     public void setAbility(Ability pAbility) {
-        ability = pAbility;
-        abilityCounter = ABILITY_LIFE_TIME;
+        if (pAbility.getAbilityType() == Ability.Type.HEALTH){
+            health = Math.min(START_HEALTH, health+Ability.HEALTH_BONUS);
+        } else {
+            ability = pAbility;
+            abilityCounter = ABILITY_LIFE_TIME;
+        }
     }
 
     public int getAbilityCounter() {
@@ -149,7 +155,7 @@ public class Hero extends PointImpl implements Joystick, Tickable, State<Element
     }
 
     public void setHealth(int pHealth) {
-        health = pHealth;
+        health += pHealth;
     }
 
     public void setDamage(int pDamage) {

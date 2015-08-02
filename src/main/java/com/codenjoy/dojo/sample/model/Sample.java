@@ -42,6 +42,21 @@ public class Sample implements Tickable, Field {
      */
     @Override
     public void tick() {
+
+        takeAbility();
+        checkBulletDirection();
+        checkLifeCycleHero();
+
+        if (counterOfAbility != 0){
+            counterOfAbility--;
+        }
+        if (abilities.isEmpty() && counterOfAbility == 0){
+            Point pos = getFreeRandom();
+            abilities.add(new Ability(pos.getX(), pos.getY(), dice));
+        }
+    }
+
+    private void takeAbility() {
         for (Player player : players) {
             Hero hero = player.getHero();
             hero.tick();
@@ -56,21 +71,6 @@ public class Sample implements Tickable, Field {
 //                gold.add(new Ability(pos.getX(), pos.getY()));
             }
         }
-
-        checkBulletDirection();
-
-        checkLifeCycleHero();
-
-//        for (Bullet elemBullet : bullets){
-//            elemBullet.tick();
-//        }
-        if (counterOfAbility != 0){
-            counterOfAbility--;
-        }
-        if (abilities.isEmpty() && counterOfAbility == 0){
-            Point pos = getFreeRandom();
-            abilities.add(new Ability(pos.getX(), pos.getY(), dice));
-        }
     }
 
     private void checkLifeCycleHero() {
@@ -78,7 +78,7 @@ public class Sample implements Tickable, Field {
             Hero hero = player.getHero();
 
             if (!hero.isAlive() && hero.getDeathTimeCounter() == IS_ALIVE) {
-                player.event(Events.LOOSE);
+                player.event(Events.KILL);
                 hero.setDeathTimeCounter(IS_DEAD);
             } else if (!hero.isAlive() && hero.getDeathTimeCounter() == IS_DEAD){
                 hero.setDeathTimeCounter(IS_ALIVE);
@@ -98,6 +98,7 @@ public class Sample implements Tickable, Field {
                         elemBullet.getDirection().changeY(elemBullet.getY())));
                 Hero tmpHero = getHeroes().get(heroIndex);
                 tmpHero.setDamage(elemBullet.getDamage());
+
                 if (tmpHero.getHealth() == 0) {
                     tmpHero.setAlive(false);
                 }

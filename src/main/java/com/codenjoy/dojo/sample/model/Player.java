@@ -12,6 +12,7 @@ public class Player {
     private EventListener listener;
     private int maxScore;
     private int score;
+    private boolean isBot = false;
     Hero hero;
 
     /**
@@ -41,8 +42,8 @@ public class Player {
      */
     public void event(Events event) {
         switch (event) {
-            case LOOSE: gameOver(); break;
-            case WIN: increaseScore(); break;
+            case INJURE: gameOver(); break;
+            case KILL: increaseScore(); break;
         }
 
         if (listener != null) {
@@ -73,4 +74,11 @@ public class Player {
         hero.init(field);
     }
 
+    public boolean isBot() {
+        return isBot;
+    }
+
+    public void setBot(boolean pBot) {
+        isBot = pBot;
+    }
 }

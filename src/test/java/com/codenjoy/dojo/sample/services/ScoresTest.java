@@ -22,11 +22,11 @@ public class ScoresTest {
     private Integer winScore;
 
     public void loose() {
-        scores.event(Events.LOOSE);
+        scores.event(Events.INJURE);
     }
 
     public void win() {
-        scores.event(Events.WIN);
+        scores.event(Events.KILL);
     }
 
     @Before
